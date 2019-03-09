@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="786.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="men.brakh.Controllers.Controller">
+    <Canvas fx:id="canvas" height="736.0" layoutX="14.0" layoutY="30.0" width="663.0" />
+    <ToolBar layoutX="731.0" layoutY="14.0" prefHeight="752.0" prefWidth="221.0">
+      <items>
+          <Button fx:id="draw_sq" mnemonicParsing="false" text="Button" />
+      </items>
+    </ToolBar>
+</AnchorPane>
