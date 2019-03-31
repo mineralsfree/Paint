@@ -2,14 +2,88 @@
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="786.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="men.brakh.Controllers.Controller">
-    <Canvas fx:id="canvas" height="736.0" layoutX="14.0" layoutY="30.0" width="663.0" />
-    <ToolBar layoutX="731.0" layoutY="14.0" prefHeight="752.0" prefWidth="221.0">
+<AnchorPane prefHeight="742.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="men.brakh.Controllers.Controller">
+    <Canvas fx:id="canvas" height="740.0" layoutX="8.0" layoutY="36.0" onMouseDragged="#dragged" onMousePressed="#pressed" onMouseReleased="#released" width="709.0" />
+    <ToolBar layoutX="731.0" layoutY="14.0" orientation="VERTICAL" prefHeight="752.0" prefWidth="221.0">
       <items>
-          <Button fx:id="draw_sq" mnemonicParsing="false" text="Button" />
+         <Button fx:id="circle" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#setFigure" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@img/Circle.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="square" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#setFigure" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@img/square.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="triangular" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#setFigure" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@img/triangle.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="ellips" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#setFigure" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fx:id="ellipseButton" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@img/ellipse.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button alignment="CENTER" mnemonicParsing="false" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            </graphic>
+         </Button>
+         <Button alignment="CENTER" mnemonicParsing="false" prefHeight="105.0" prefWidth="212.0">
+            <graphic>
+               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            </graphic>
+         </Button>
+         <ColorPicker fx:id="colorPicker" prefHeight="34.0" prefWidth="194.0" />
       </items>
     </ToolBar>
+   <MenuBar layoutX="8.0" prefHeight="34.0" prefWidth="168.0">
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Close without saving" />
+               <MenuItem mnemonicParsing="false" text="Save" />
+               <MenuItem mnemonicParsing="false" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Edit">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Undo" />
+               <MenuItem mnemonicParsing="false" text="Redo" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
 </AnchorPane>
