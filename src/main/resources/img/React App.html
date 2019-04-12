@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="./React App_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+</style><style type="text/css">.header-hamburger {
+  display: none; }
+
+@media screen and (max-width: 1023px) {
+  .filter-caption {
+    display: none; } }
+
+@media screen and (max-width: 1023px) {
+  .header-navigation {
+    width: 100%;
+    display: none; } }
+
+.header-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 16px;
+  background-color: #FFF;
+  box-sizing: border-box; }
+  @media screen and (max-width: 1023px) {
+    .header-container {
+      -webkit-flex-direction: row;
+              flex-direction: row;
+      width: 100%;
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+      position: -webkit-sticky;
+      position: sticky;
+      z-index: 233;
+      top: 0; } }
+
+.header-logo {
+  height: 28px; }
+
+.header-input {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  width: 475px;
+  position: relative;
+  border: 2px solid #E6E6E6;
+  border-radius: 4px 8px 8px 4px;
+  height: 28px; }
+  @media screen and (max-width: 1023px) {
+    .header-input {
+      opacity: 0;
+      display: none;
+      -webkit-order: 30;
+              order: 30;
+      width: 100%;
+      margin: 16px auto; } }
+
+.header-text-input {
+  border-width: 0 0 0 10px;
+  max-width: 370px;
+  border-color: transparent;
+  width: 100%;
+  font-size: 15px;
+  padding: 0;
+  margin: 2px; }
+  .header-text-input::-webkit-search-cancel-button {
+    display: none; }
+  .header-text-input:focus {
+    outline-color: transparent; }
+
+.header-text-input-submit {
+  background: #E6E6E6;
+  outline: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Helvetica, sans-serif;
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #E6E6E6;
+  width: 75px; }
+
+.header-button-list-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  display: flex; }
+  @media screen and (max-width: 1023px) {
+    .header-button-list-container {
+      text-align: center;
+      width: 100%;
+      display: block; } }
+
+.header-button {
+  font-family: Helvetica, serif;
+  font-size: 16px;
+  line-height: 32px; }
+  .header-button:hover {
+    cursor: pointer; }
+  @media screen and (max-width: 1023px) {
+    .header-button {
+      width: 100%; } }
+
+.header-button-list-container li {
+  display: inline;
+  margin-right: 32px;
+  height: 32px; }
+  @media screen and (max-width: 1023px) {
+    .header-button-list-container li {
+      display: block;
+      width: calc(100% - 32px);
+      margin: 16px auto;
+      text-align: center; } }
+
+.header-button-list-container li:last-child {
+  margin-right: 0; }
+
+.header-button_style_none {
+  color: #333; }
+  .header-button_style_none:hover {
+    opacity: 1; }
+
+.header-button_style_opacity_reduced {
+  color: #333;
+  opacity: .6; }
+
+.header-button_style_yellow {
+  height: 32px;
+  padding: 0 15px;
+  background-color: #FC0;
+  border-radius: 4px; }
+
+.search-input__clear {
+  background: url(/static/media/cancel-button.4565e230.svg) no-repeat center;
+  opacity: .1;
+  width: 20px;
+  display: none; }
+
+.search-input__clear:hover {
+  opacity: .4; }
+
+.delete-item {
+  display: inline; }
+
+.header-label-hamburger {
+  display: none; }
+  @media screen and (max-width: 1023px) {
+    .header-label-hamburger {
+      display: block; } }
+
+@media screen and (max-width: 1023px) {
+  #hamburger:checked ~ .header-navigation {
+    opacity: 1;
+    display: block; } }
+
+@media screen and (max-width: 1023px) {
+  #hamburger:checked ~ .header-input {
+    display: -webkit-flex;
+    display: flex;
+    opacity: 1;
+    margin-bottom: 0; } }
+
+a {
+  text-decoration: none; }
+</style><style type="text/css">.filter-container {
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  margin: 32px 0;
+  display: -webkit-flex;
+  display: flex;
+  font-family: Helvetica, sans-serif;
+  font-size: 36px;
+  line-height: 42px; }
+  @media screen and (max-width: 1023px) {
+    .filter-container {
+      -webkit-justify-content: center;
+              justify-content: center;
+      margin: 12px 0; } }
+  @media screen and (max-width: 410px) {
+    .filter-container {
+      -webkit-justify-content: flex-start;
+              justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: auto;
+      box-sizing: border-box;
+      white-space: nowrap; }
+      .filter-container::-webkit-scrollbar {
+        display: none; } }
+
+@media screen and (max-width: 1023px) {
+  #color-0 + .filter-color-square {
+    margin-left: 16px;
+    background-color: red; } }
+
+.filter-color-square {
+  margin-top: 5px;
+  margin-right: 16px;
+  opacity: .4;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px; }
+  @media screen and (max-width: 1023px) {
+    .filter-color-square {
+      width: 40px;
+      height: 40px; } }
+
+.filter-radio {
+  display: none; }
+
+.filter-color-square:hover {
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+
+.filter-radio:checked ~ .filter-color-square {
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+
+.filter-radio:checked ~ .filter-color-square::after {
+  content: '\2713';
+  position: relative;
+  top: -4px;
+  left: 2px; }
+  @media screen and (max-width: 1023px) {
+    .filter-radio:checked ~ .filter-color-square::after {
+      top: 0;
+      left: 5px; } }
+
+.filter-caption {
+  margin-right: 16px; }
+</style><style type="text/css">.notes-container {
+  display: grid;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  grid-row-gap: 24px;
+  grid-column-gap: 24px;
+  grid-template-columns: repeat(6, calc((100% - 120px) / 6)); }
+  @media screen and (max-width: 1023px) {
+    .notes-container {
+      display: block; } }
+
+.note-container_size_l {
+  grid-column-end: span 4;
+  grid-row-end: span 3; }
+
+.note-container_size_m {
+  grid-column-end: span 3;
+  grid-row-end: span 2; }
+
+.note-container_size_s {
+  grid-column-end: span 2;
+  grid-row-end: span 1; }
+
+.note-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  min-height: 100px;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8; }
+  @media screen and (max-width: 1023px) {
+    .note-container {
+      margin-bottom: 17px; } }
+
+.note-title {
+  font-size: 24px;
+  font-family: Helvetica, sans-serif;
+  line-height: 28px;
+  font-weight: bold;
+  margin-bottom: 10px; }
+
+.note-text {
+  font-size: 18px;
+  font-weight: lighter; }
+
+ul {
+  margin: 18px 0;
+  padding: 0; }
+
+.note-tags {
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: rgba(51, 51, 51, 0.1);
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0 12px;
+  margin-right: 12px;
+  list-style: none;
+  display: inline-block;
+  border-radius: 16px; }
+
+.note-tags:first-child {
+  margin-left: 0; }
+
+.note-tags:hover {
+  background-color: rgba(51, 51, 51, 0.2);
+  cursor: pointer; }
+
+.note-footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
+
+.fas {
+  margin-left: 17px;
+  font-size: 16px;
+  opacity: 0; }
+  @media screen and (max-width: 1023px) {
+    .fas {
+      opacity: .2; } }
+
+.note-icons .fas {
+  opacity: 0; }
+
+.fas:first-child {
+  margin-left: 0; }
+
+.note-icons .fas:hover {
+  cursor: pointer;
+  opacity: .4 !important; }
+
+.note-container:hover .note-icons .fas {
+  opacity: .2; }
+
+.note-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+
+.note-date {
+  font-family: Helvetica, serif;
+  font-size: 18px; }
+</style><style type="text/css">.note-img {
+  width: calc(100% + 48px);
+  margin-top: -24px;
+  margin-left: -24px; }
+
+.note-image-container {
+  margin: 24px; }
+</style><style type="text/css">.note-list-todo-contatiner {
+  margin: 24px; }
+
+.note-list-todo {
+  list-style: none; }
+
+.note-list-todo-li {
+  margin: 12px 0;
+  font-size: 18px; }
+
+input[type=checkbox] {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  margin-right: 12px;
+  background: #D9D9D9;
+  outline: none; }
+
+.note-list-done {
+  text-decoration: line-through; }
+
+.note-list-gray {
+  padding: 24px;
+  background: #FFF;
+  border-radius: 16px;
+  margin-top: 58px; }
+
+.note-list-done-span {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  margin-right: 12px;
+  margin-top: 12px; }
+</style><style type="text/css">.note-text-flex-container {
+  margin: 24px;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
+</style><style type="text/css">.note-list-container {
+  padding: 24px;
+  border-radius: 16px;
+  margin-left: -24px;
+  margin-top: -24px;
+  width: 100%; }
+</style><style type="text/css">.attachments-img {
+  height: 64px;
+  width: 64px;
+  border-radius: 4px;
+  margin-left: 24px; }
+
+.attachments-container {
+  background-color: #E8E8E8;
+  position: relative;
+  border-radius: 0 0 16px 16px; }
+
+.fa-globe {
+  opacity: 1;
+  font-size: 24px;
+  margin-right: 10px; }
+
+.fa-image {
+  font-size: 25px;
+  line-height: 67px;
+  text-align: center; }
+
+div > a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  height: 48px; }
+
+a:visited {
+  color: #000; }
+
+.attachments-container_type_link {
+  padding: 0 24px; }
+
+.attachments-container_type_image {
+  padding: 12px 25px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
+
+.attachments-link {
+  padding: 12px 0;
+  border-bottom: #FFF solid 1px; }
+
+.attachments-link:last-child {
+  border-bottom: 0; }
+</style><style type="text/css">.reminder-container {
+  display: -webkit-box;
+  background-color: #DB5341;
+  border-radius: 16px 16px 0 0;
+  padding: 14px 26px; }
+
+.reminder-caption {
+  margin-left: 14px;
+  line-height: 22px;
+  color: #FFF; }
+</style><style type="text/css">.modal-content {
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  background: #fff;
+  z-index: 9999;
+  transition: all 0.5s ease-in;
+  border-radius: 16px; }
+  @media screen and (max-width: 1023px) {
+    .modal-content {
+      left: 0;
+      right: 0;
+      max-width: calc(100% - 30px);
+      margin: 0 auto -17px; } }
+
+.modal-overflow {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0; }
+</style><style type="text/css">.App {
+    background-color: #F7F7F7;
+    display: grid;
+    grid-template-rows: auto auto 64px;
+    grid-template-columns: auto 1000px auto;
+    grid-template-areas: 'h h h' '. c .' 'f f f';
+}
+
+@media screen and (max-width: 1023px) {
+    .App {
+        display: block;
+    }
+}
+
+.header-container {
+    grid-area: h;
+
+}
+
+.main-container {
+    grid-area: c;
+    min-height: 100vh;
+
+}
+@media screen and (min-width: 1023px) {
+    .main-container{
+        margin-bottom: 17px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .notes-container {
+        margin: 16px 16px 0 16px
+    }
+}
+
+.footer-container {
+    grid-area: f;
+}</style><style type="text/css">.footer-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-align-items: center;
+          align-items: center;
+  background-color: #FFF; }
+  @media screen and (max-width: 1023px) {
+    .footer-container {
+      padding: 16px; } }
+
+.footer-copyright {
+  margin-right: 25px; }
+  @media screen and (max-width: 1023px) {
+    .footer-copyright {
+      margin: 0; } }
+
+@media screen and (max-width: 1023px) {
+  .crutch {
+    display: none; } }
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div class="header-container"><img src="./React App_files/logo.c530ec72.svg" class="header-logo" alt="header-logo"><input type="checkbox" id="hamburger" class="header-hamburger"><label class="header-label-hamburger" for="hamburger"><img src="./React App_files/L.aee7be9c.svg" alt="hamburger"></label><div class="header-input"><input class="header-text-input" type="search" maxlength="400" name="lol" value=""><span class="search-input__clear "> </span><button class="header-text-input-submit">Найти</button></div><nav class="header-navigation"><ul class="header-button-list-container"><li class="header-button header-button_style_none"><a target="_blank" rel="noopener noreferrer" href="https://ya.ru/">Активные</a></li><li class="header-button header-button_style_opacity_reduced"><a target="_blank" rel="noopener noreferrer" href="https://ya.ru/">Архив</a></li><li class="header-button header-button_style_yellow"><a target="_blank" rel="noopener noreferrer" href="https://ya.ru/"> Добавить</a></li></ul></nav></div><div class="main-container"><div><div class="filter-container"><div class="filter-caption">Заметки</div><label for="color-0"><input type="checkbox" id="color-0" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(232, 71, 71);"></div></label><label for="color-1"><input type="checkbox" id="color-1" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(242, 153, 74);"></div></label><label for="color-2"><input type="checkbox" id="color-2" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(242, 201, 76);"></div></label><label for="color-3"><input type="checkbox" id="color-3" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(33, 150, 83);"></div></label><label for="color-4"><input type="checkbox" id="color-4" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(86, 204, 242);"></div></label><label for="color-5"><input type="checkbox" id="color-5" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(47, 128, 237);"></div></label><label for="color-6"><input type="checkbox" id="color-6" name="color" class="filter-radio"><div class="filter-color-square" style="background-color: rgb(155, 81, 224);"></div></label></div><div class="modal-overflow" style="height: 3800px;"><div class="modal-content" style="top: 0%;margin-top: 970px;width: 340px;padding-bottom: -17px;"><div class="note-container note-container_size_s" style="background-color: rgba(242, 201, 76, 0.4);overflow: hidden;"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title">Завтра дедлайн</div><div class="note-text"><span>Не забыть сверстать макет<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">Работа</li><li class="note-tags">ШРИ</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div></div></div></div><div class="notes-container"><div class="note-container note-container_size_l" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_l"><div><div class="note-list-container" style="background-color: rgba(232, 71, 71, 0.4);"><div class="note-title">Список покупок</div><ul class="note-list-todo"><li class="note-list-todo-li"><label for="note-list-0" class="note-list-label-todo"><input id="note-list-0" type="checkbox">Оливочки</label></li><li class="note-list-todo-li"><label for="note-list-1" class="note-list-label-todo"><input id="note-list-1" type="checkbox">Макароны</label></li><li class="note-list-todo-li"><label for="note-list-2" class="note-list-label-todo"><input id="note-list-2" type="checkbox">Сливки</label></li><li class="note-list-todo-li"><label for="note-list-3" class="note-list-label-todo"><input id="note-list-3" type="checkbox">Чеснок</label></li><li class="note-list-todo-li"><label for="note-list-4" class="note-list-label-todo"><input id="note-list-4" type="checkbox">Помидорки</label></li><li class="note-list-todo-li"><label for="note-list-5" class="note-list-label-todo"><input id="note-list-5" type="checkbox">Огурец</label></li><li class="note-list-todo-li"><label for="note-list-6" class="note-list-label-todo"><input id="note-list-6" type="checkbox">Вкусняшки</label></li></ul></div><div class="note-list-done"><div class="note-list-done-span"><label for="note-list-done note-list-done_0_0" class="note-list-label-done"><input id="note-list-done note-list-done_0_0" type="checkbox" checked="">Яйца</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1" class="note-list-label-done"><input id="note-list-done note-list-done_0_1" type="checkbox" checked="">Хлеб</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_2" class="note-list-label-done"><input id="note-list-done note-list-done_0_2" type="checkbox" checked="">Сыр</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_3" class="note-list-label-done"><input id="note-list-done note-list-done_0_3" type="checkbox" checked="">Ветчина</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_4" class="note-list-label-done"><input id="note-list-done note-list-done_0_4" type="checkbox" checked="">Чай</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_5" class="note-list-label-done"><input id="note-list-done note-list-done_0_5" type="checkbox" checked="">Масло сливочное</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_6" class="note-list-label-done"><input id="note-list-done note-list-done_0_6" type="checkbox" checked="">Вино</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_7" class="note-list-label-done"><input id="note-list-done note-list-done_0_7" type="checkbox" checked="">Камамбер</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_8" class="note-list-label-done"><input id="note-list-done note-list-done_0_8" type="checkbox" checked="">Сыр фета</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_9" class="note-list-label-done"><input id="note-list-done note-list-done_0_9" type="checkbox" checked="">Васаби</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_0" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_0" type="checkbox" checked="">Соевый соус</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_1" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_1" type="checkbox" checked="">Красный имбирь</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_2" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_2" type="checkbox" checked="">Гвоздика</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_3" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_3" type="checkbox" checked="">Кардамон</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_4" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_4" type="checkbox" checked="">Овсяные хлопья</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_5" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_5" type="checkbox" checked="">Пельмени</label></div><div class="note-list-done-span"><label for="note-list-done note-list-done_0_1 note-list-done_1_6" class="note-list-label-done"><input id="note-list-done note-list-done_0_1 note-list-done_1_6" type="checkbox" checked="">Сметана</label></div></div></div><div class="note-text"></div></div><div class="note-text-foot"><ul><li class="note-tags">покупки</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div></div><div class="note-container note-container_size_s" style="background-color: rgba(242, 201, 76, 0.4);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title">Завтра дедлайн</div><div class="note-text"><span>Не забыть сверстать макет<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">Работа</li><li class="note-tags">ШРИ</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div></div><div class="note-container note-container_size_s" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title"></div><div class="note-text"><span>Купить чайник с Bluetooth<br></span><span>Видел у Xiaomi на днях<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">покупки</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div></div><div class="note-container note-container_size_s" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title">Генератор котов</div><div class="note-text"></div></div><div class="note-text-foot"><ul></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div><div><div class="attachments-container attachments-container_type_link"><div class="attachments-link"><a href="https://thiscatdoesnotexist.com/"><i class="fas fa-globe"></i>thiscatdoesnotexist.com</a></div></div></div></div><div class="note-container note-container_size_m" style="background-color: rgba(86, 204, 242, 0.4);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_m"><div class="note-title">Нагенерил смешных котов</div><div class="note-text"><span>Американец научил нейросети генерировать фото кошек. Получилось не оч<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">коты</li><li class="note-tags">мемы</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Месяц назад</div></div></div></div><div><div class="attachments-container attachments-container_type_image"><i class="far fa-image"></i><div><img class="attachments-img" src="./React App_files/orig" alt="random staff"><img class="attachments-img" src="./React App_files/orig(1)" alt="random staff"><img class="attachments-img" src="./React App_files/orig(2)" alt="random staff"></div></div></div></div><div class="note-container note-container_size_m" style="background-color: rgb(255, 255, 255);"><div class="reminder-container"><img src="./React App_files/icon color.cf216124.svg" alt="warning"><div class="reminder-caption">Событие прошло(</div></div><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_m"><div class="note-title">Скидки в Виталюре</div><div class="note-text"><span>На филе лосося и картоху<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">покупки</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">2 месяцa назад</div></div></div></div></div><div class="note-container note-container_size_m" style="background-color: rgba(242, 153, 74, 0.4);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_m"><div class="note-title"></div><div class="note-text"><span>Реферат до 2 апреля (300 терминов, аннотация, основная, заключение, список литературы)<br></span><span>Перевод 40к знаков к зачету, 40к к экзамену<br></span><span>Тест 1 и 2<br></span><span><br></span><span>Подготовка кадров зарубежом (юнит 2)<br></span><span>Научно исследовательская работа магистранта (юнит 2)<br></span><span>Роль науки (юнит 1)<br></span><span>10-15 предложений минимум<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">универ</li><li class="note-tags">домашнее задание</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">2 месяцa назад</div></div></div></div></div><div class="note-container note-container_size_m" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><img class="note-img" src="./React App_files/orig(3)" alt="some random"><div class="note-text-container note-text-container_size_m"><div class="note-title"></div><div class="note-text"></div></div><div class="note-text-foot"><ul><li class="note-tags">коты</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">2 месяцa назад</div></div></div></div></div><div class="note-container note-container_size_l" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_l"><div class="note-title">Выучить латынь</div><div class="note-text"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">учеба</li><li class="note-tags">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">4 месяцa назад</div></div></div></div></div><div class="note-container note-container_size_s" style="background-color: rgb(255, 255, 255);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title"></div><div class="note-text"><span>Теперь ищу только в яндексе<br></span></div></div><div class="note-text-foot"><ul><li class="note-tags">Работа</li></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">7 месяцев назад</div></div></div></div><div><div class="attachments-container attachments-container_type_link"><div class="attachments-link"><a href="https://yandex.ru/"><i class="fas fa-globe"></i>yandex.ru</a></div><div class="attachments-link"><a href="https://ya.ru/"><i class="fas fa-globe"></i>ya.ru</a></div></div></div></div><div class="note-container note-container_size_s" style="background-color: rgba(33, 150, 83, 0.4);"><div class="note-text-flex-container"><div class="note-text-container note-text-container_size_s"><div class="note-title">Не забыть выгулять Сиба-Ину</div><div class="note-text"></div></div><div class="note-text-foot"><ul></ul><div class="note-footer"><div class="note-icons"><i class="fas fa-check"></i><i class="fas fa-pen"></i></div><div class="note-date">Год назад</div></div></div></div></div></div></div></div><div class="footer-container"><div class="crutch"></div><div>Vasya pupkin</div><div class="footer-copyright">© Яндекс ШРИ</div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.53f2f62807af1b43f02c.hot-update.js"></script>
+
+</body></html>

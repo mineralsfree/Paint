@@ -15,7 +15,11 @@ import men.brakh.figures.Square;
 
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = As.PROPERTY, property = "@class")
-@JsonSubTypes({ @Type(value = Circle.class, name = "Circle"), @Type(value = Ellipse.class, name = "Ellipse"), @Type(value = Square.class, name = "square")  })
+@JsonSubTypes({
+        @Type(value = Circle.class, name = "Circle"),
+        @Type(value = Ellipse.class, name = "Ellipse"),
+        @Type(value = Square.class, name = "Square")
+})
 public abstract class Figure implements IDrawable {
 
     @JsonProperty("startPoint")

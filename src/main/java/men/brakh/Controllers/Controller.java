@@ -129,7 +129,6 @@ public class Controller implements Initializable {
     }
 
     @FXML
-
     private void changeFigureColor() {
         if (selectFlag && selectedToChange != null) {
             selectedToChange.setColor(colorPicker.getValue());

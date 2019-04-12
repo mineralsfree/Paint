@@ -1,6 +1,5 @@
 package men.brakh.figures;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -8,10 +7,6 @@ import men.brakh.Models.Figure;
 import men.brakh.Models.ISelectable;
 
 public class Circle extends Figure implements ISelectable {
-    @JsonCreator
-    public Circle(){
-
-    }
     public void onDraw(GraphicsContext gc, Color color) {
         gc.setFill(color);
         gc.strokeOval(startPoint.x, startPoint.y, endPoint.x-startPoint.x, endPoint.x-startPoint.x);

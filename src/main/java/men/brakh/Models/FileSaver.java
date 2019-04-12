@@ -12,14 +12,6 @@ public class FileSaver {
         FileWriter fw = new FileWriter(filepath);
         ObjectMapper mapper = new ObjectMapper();
         mapper.writerWithDefaultPrettyPrinter().writeValue(fw, figuresStack);
-//        Iterator it = this.getAll();
-//        fw.write('[');
-//        while (it.hasNext()) {
-//            Figure current = (Figure) it.next();
-//            fw.write(new ObjectMapper().writeValueAsString(current));
-//          if (it.hasNext())  fw.write(',');
-//        }
-//        fw.write(']');
         fw.close();
     }
     public FiguresStack readFromFile(String filePath) {
